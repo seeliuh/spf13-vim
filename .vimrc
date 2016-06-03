@@ -100,9 +100,10 @@
     " endif
     filetype plugin indent on   " Automatically detect file types.
     syntax on                   " Syntax highlighting
-    set mouse=a                 " Automatically enable mouse usage
-    set mousehide               " Hide the mouse cursor while typing
+    "set mouse=a                 " Automatically enable mouse usage
+    "set mousehide               " Hide the mouse cursor while typing
     scriptencoding utf-8
+    set fencs=utf-8,gb18030,gbk,gb2312,cp936
 
     if has('clipboard')
         if has('unnamedplus')  " When possible use + register for copy-paste
@@ -581,7 +582,7 @@
             let NERDTreeShowBookmarks=1
             let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
             let NERDTreeChDirMode=0
-            let NERDTreeQuitOnOpen=1
+            let NERDTreeQuitOnOpen=0
             let NERDTreeMouseMode=2
             let NERDTreeShowHidden=1
             let NERDTreeKeepTreeInNewTab=1
@@ -715,6 +716,8 @@
 
             " enable completion from tags
             let g:ycm_collect_identifiers_from_tags_files = 1
+            "let g:ycm_confirm_extra_conf = 0
+            let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
 
             " remap Ultisnips for compatibility for YCM
             let g:UltiSnipsExpandTrigger = '<C-j>'
